@@ -1,8 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-# from django.urls import reverse
-#
-# from .resources import TYPE
 
 
 class Category(models.Model):
@@ -23,12 +20,6 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-#
-# class Author(models.Model):
-#     user = models.OneToOneField(User, on_delete=models.CASCADE)
-#     #
-#     # def __str__(self):
-#     #     return self.user.username
 
 
 class Article(models.Model):
@@ -37,13 +28,10 @@ class Article(models.Model):
     title = models.CharField(max_length=120)
     text = models.TextField()
     category = models.ManyToManyField(Category, default='Tanks')
-    # upload = models.FileField(upload_to='uploads/')
+ 
 
     def __str__(self):
         return f'Заголовок: {self.title}. Содержание: {self.text}. {self.article_time}. Категория: {self.category}'
-    #
-    # def get_absolute_url(self):
-    #     return reverse('article_list')
 
 
 class UserResponse(models.Model):
@@ -52,8 +40,6 @@ class UserResponse(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
     status = models.BooleanField(default=False)
 
-    # def __str__(self):
-    #     return self.article.title
 
 
 class Subscription(models.Model):
