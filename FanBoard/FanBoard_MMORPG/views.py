@@ -20,17 +20,3 @@ class ArticleDetail(DetailView):
     template_name = 'article.html'
     context_object_name = 'article'
 
-#
-# class ArticleCreate(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
-#     raise_exception = True
-#     permission_required = ('article.add_post',)
-#     form_class = ArticleForm
-#     model = Article
-#     template_name = 'post_edit.html'
-#
-#     def form_valid(self, form):
-#         post = form.save(commit=False)
-#         if self.request.path == '/news/articles/create/':
-#             post.post_type = article
-#         post.save()
-#         return super().form_valid(form)
