@@ -40,7 +40,6 @@ Article
         <h2>Все отклики на объявление: </h2>
         {% for ar in article.userresponse_set.all %}
             <p>Отклик: {{ ar.text }} </p>
-<!--от пользователя {{ request.user.username }}-->
         {% endfor %}
     {% endif %}
 
