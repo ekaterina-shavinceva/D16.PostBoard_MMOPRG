@@ -7,8 +7,3 @@ from .models import Article
 @receiver(post_save, sender=Article)
 def article_created(instance, **kwargs):
     print('Новое объявление', instance)
-
-
-@receiver(post_save, sender=Article)
-def response_created(instance, **kwargs):
-    print('Новое объявление', instance)
